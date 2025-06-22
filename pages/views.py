@@ -1,12 +1,22 @@
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'pages/index.html')
+    teams=Team.objects.all()
+    context = {
+        'teams':teams,
+    }
+
+    return render(request, 'pages/index.html', context)
 def about(request):
+    teams=Team.objects.all()
+    context = {
+        'teams':teams,
+    }
     
-    return render(request, 'pages/about.html')
+    return render(request, 'pages/about.html',context)
 
 def car_details(request):
 
