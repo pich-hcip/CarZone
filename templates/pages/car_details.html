@@ -1,5 +1,5 @@
 {% load static%}
-
+{% load humanize %}
 {% include "pages/Header.html" %}
 <!-- Main header end -->
 
@@ -7,10 +7,10 @@
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
-            <h1>LAMBORGHINI HURACÁN</h1>
+            <h1>{{single_car.car_title}}</h1>
             <ul class="breadcrumbs">
                 <li><a href="/">Home</a></li>
-                <li class="active">LAMBORGHINI HURACÁN</li>
+                <li class="active">{{single_car.car_title}}</li>
             </ul>
         </div>
     </div>
@@ -26,32 +26,32 @@
                     <!-- Heading start -->
                     <div class="heading-car clearfix">
                         <div class="pull-left">
-                            <h3>Lamborghini Huracán</h3>
+                            <h3>{{single_car.car_title}}</h3>
                             <h6>
-                                <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                                <i class="flaticon-pin"></i>{{single_car.state}}, {{single_car.city}}
                             </h6>
                         </div>
                         <div class="pull-right">
-                            <h3><span>$2825.00</span></h3>
+                            <h3><span>${{single_car.price | intcomma}}</span></h3>
                         </div>
                     </div>
                     <div id="carDetailsSlider" class="carousel car-details-sliders slide mb-40">
                         <!-- main slider carousel items -->
                         <div class="carousel-inner">
                             <div class="active item carousel-item" data-slide-number="0">
-                                <img src="{% static 'img/car/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                                <img src="{{single_car.car_photo.url}}" class="img-fluid" alt="slider-car">
                             </div>
                             <div class="item carousel-item" data-slide-number="1">
-                                <img src="{% static 'img/car/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                                <img src="{{single_car.car_photo_1.url}}" class="img-fluid" alt="slider-car">
                             </div>
                             <div class="item carousel-item" data-slide-number="2">
-                                <img src="{% static 'img/car/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                                <img src="{{single_car.car_photo_2.url}}" class="img-fluid" alt="slider-car">
                             </div>
                             <div class="item carousel-item" data-slide-number="4">
-                                <img src="{% static 'img/car/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                                <img src="{{single_car.car_photo_3.url}}" class="img-fluid" alt="slider-car">
                             </div>
                             <div class="item carousel-item" data-slide-number="5">
-                                <img src="{% static 'img/car/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                                <img src="{{single_car.car_photo_4.url}}" class="img-fluid" alt="slider-car">
                             </div>
                         </div>
                         <!-- main slider carousel nav controls -->
@@ -59,27 +59,27 @@
                             <ul class="carousel-indicators car-properties list-inline nav nav-justified">
                                 <li class="list-inline-item active">
                                     <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#carDetailsSlider">
-                                        <img src="{% static 'img/car/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                                        <img src="{{single_car.car_photo.url}}" class="img-fluid" alt="slider-car">
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-1" data-slide-to="1" data-target="#carDetailsSlider">
-                                        <img src="{% static 'img/car/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                                        <img src="{{single_car.car_photo_1.url}}" class="img-fluid" alt="slider-car">
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-2" data-slide-to="2" data-target="#carDetailsSlider">
-                                        <img src="{% static 'img/car/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                                        <img src="{{single_car.car_photo_2.url}}" class="img-fluid" alt="slider-car">
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-3" data-slide-to="3" data-target="#carDetailsSlider">
-                                        <img src="{% static 'img/car/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                                        <img src="{{single_car.car_photo_3.url}}" class="img-fluid" alt="slider-car">
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-4" data-slide-to="4" data-target="#carDetailsSlider">
-                                        <img src="{% static 'img/car/car-1.jpg' %}" class="img-fluid" alt="slider-car">
+                                        <img src="{{single_car.car_photo_4.url}}" class="img-fluid" alt="slider-car">
                                     </a>
                                 </li>
                             </ul>
@@ -102,152 +102,23 @@
                                     <h3 class="heading-2">
                                         Description
                                     </h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra a. Aliquam pellentesque nibh et nibh feugiat gravida. Maecenas ultricies, diam vitae semper placerat, velit risus accumsan nisl, eget tempor lacus est vel nunc. Proin accumsan elit sed neque euismod fringilla. Curabitur lobortis nunc velit, et fermentum urna dapibus non. Vivamus magna lorem, elementum id gravida ac, laoreet tristique augue. Maecenas dictum lacus eu nunc porttitor, ut hendrerit arcu efficitur.</p>
-                                    <p>Aliquam ultricies nunc porta metus interdum mollis. Donec porttitor libero augue, vehicula tincidunt lectus placerat a. Sed tincidunt dolor non sem dictum dignissim. Nulla vulputate orci felis, ac ornare purus ultricies a. Fusce euismod magna orci, sit amet aliquam turpis dignissim ac. In at tortor at ligula pharetra sollicitudin. Sed tincidunt, purus eget laoreet elementum, felis est pharetra ante, tincidunt feugiat libero enim sed risus. Sed at leo sit amet mi bibendum aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent cursus varius odio, non faucibus dui. Nunc vehicula lectus sed velit suscipit aliquam vitae eu ipsum. adipiscing elit.</p>
+                                    <p>
+                                        {{single_car.description | safe}}
+                                    </p>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="two" role="tabpanel" aria-labelledby="two-tab">
                                 <div class="features-info mb-50">
                                     <h3 class="heading-2">Features</h3>
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <ul>
-                                                <li>
-                                                    Adaptive Cruise Control
-                                                </li>
-                                                <li>
-                                                    Airbags
-                                                </li>
-                                                <li>
-                                                    Air Conditioning
-                                                </li>
-                                                <li>
-                                                    Alarm System
-                                                </li>
-                                                <li>
-                                                    Anti-theft Protection
-                                                </li>
-                                                <li>
-                                                    Audio Interface
-                                                </li>
-                                                <li>
-                                                    Automatic Climate Control
-                                                </li>
-                                                <li>
-                                                    Automatic Headlights
-                                                </li>
-                                                <li>
-                                                    Auto Start/Stop
-                                                </li>
-                                                <li>
-                                                    Bi-Xenon Headlights
-                                                </li>
-                                                <li>
-                                                    Audio Interface
-                                                </li>
-                                                <li>
-                                                    Bluetooth Handset
-                                                </li>
-                                                <li>
-                                                    BOSE Surround Sound
-                                                </li>
-                                                <li>
-                                                    Burmester Surround Sound
-                                                </li>
-                                                <li>
-                                                    CD/DVD Autochanger
-                                                </li>
+                                                {% for feature in single_car.features %}
+                                                    <li>{{ feature }}</li>
+                                                {% endfor %}
                                             </ul>
                                         </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <ul>
-                                                <li>
-                                                    CDR Audio
-                                                </li>
-                                                <li>
-                                                    Cruise Control
-                                                </li>
-                                                <li>
-                                                    Direct Fuel Injection
-                                                </li>
-                                                <li>
-                                                    Electric Parking Brake
-                                                </li>
-                                                <li>
-                                                    Floor Mats
-                                                </li>
-                                                <li>
-                                                    Garage Door Opener
-                                                </li>
-                                                <li>
-                                                    Leather Package
-                                                </li>
-                                                <li>
-                                                    Locking Rear Differential
-                                                </li>
-                                                <li>
-                                                    Luggage Compartments
-                                                </li>
-                                                <li>
-                                                    Manual Transmission
-                                                </li>
-                                                <li>
-                                                    Navigation Module
-                                                </li>
-                                                <li>
-                                                    Online Services
-                                                </li>
-                                                <li>
-                                                    ParkAssist
-                                                </li>
-                                                <li>
-                                                    Porsche Communication
-                                                </li>
-                                                <li>
-                                                    CD/DVD Autochanger
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <ul>
-                                                <li>
-                                                    Power Steering
-                                                </li>
-                                                <li>
-                                                    Reversing Camera
-                                                </li>
-                                                <li>
-                                                    Roll-over Protection
-                                                </li>
-                                                <li>
-                                                    Seat Heating
-                                                </li>
-                                                <li>
-                                                    Seat Ventilation
-                                                </li>
-                                                <li>
-                                                    Sound Package Plus
-                                                </li>
-                                                <li>
-                                                    Sport Chrono Package
-                                                </li>
-                                                <li>
-                                                    Steering Wheel Heating
-                                                </li>
-                                                <li>
-                                                    Tire Pressure Monitoring
-                                                </li>
-                                                <li>
-                                                    Universal Audio Interface
-                                                </li>
-                                                <li>
-                                                    Voice Control System
-                                                </li>
-                                                <li>
-                                                    Wind Deflector
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -269,53 +140,53 @@
                         <h3 class="sidebar-title">Refine Your Search</h3>
                         <ul>
                             <li>
-                                <span>Body Style:</span>Convertible
+                                <span>Body Style: </span>{{single_car.body_style}}
                             </li>
                             <li>
-                                <span>Engine:</span>3.4L Mid-Engine V6
+                                <span>Engine: </span>{{single_car.engine}}
                             </li>
                             <li>
-                                <span>Transmission:</span>6-speed Manual
+                                <span>Transmission: </span>{{single_car.transmission}}
                             </li>
                             <li>
-                                <span>Drivetrain:</span>Rear Wheel Drive
+                                <span>Year: </span>{{single_car.year}}
                             </li>
                             <li>
-                                <span>Exaterion:</span>Lime Gold Metallic
+                                <span>Color: </span> {{single_car.color}}
                             </li>
                             <li>
-                                <span>Interior:</span>Agate Grey
+                                <span>Interior: </span>{{single_car.interior}}
                             </li>
                             <li>
-                                <span>Miles:</span>12
+                                <span>Miles: </span>{{single_car.miles|intcomma}} Miles
                             </li>
                             <li>
-                                <span>Doors:</span>2
+                                <span>Doors: </span>{{single_car.door}}
                             </li>
                             <li>
-                                <span>Passengers:</span>2
+                                <span>Passengers: </span> {{single_car.passengers}}
                             </li>
                             <li>
-                                <span>Vin #:</span>WP0AB2E81EK190171
+                                <span>Vin no: </span> {{single_car.vin_no}}
                             </li>
                             <li>
-                                <span>Fuel Mileage:</span>20 City / 28 Hwy
+                                <span>State: </span>{{single_car.state}}, {{single_car.city}}
                             </li>
                             <li>
-                                <span>Fuel Type:</span>Gasoline
+                                <span>Fuel Type: </span>{{single_car.fuel_type}}
                             </li>
                             <li>
-                                <span>Vin #:</span>WP0AB2E81EK190171
+                                <span>Mileage:</span> {{single_car.mileage|intcomma}} Miles
                             </li>
 
                             <li>
-                                <span>Condition:</span>Brand New
+                                <span>Condition:</span>{{single_car.condition}}
                             </li>
                             <li>
-                                <span>Owners:</span>N/A
+                                <span>Owners:</span>{{single_car.no_of_owners}}
                             </li>
                             <li>
-                                <span>Waeeanty:</span>3 Years Limited
+                                <span>Model: </span>{{single_car.model}}
                             </li>
                         </ul>
                     </div>

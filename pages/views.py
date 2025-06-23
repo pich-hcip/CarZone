@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import *
+from django.shortcuts import get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 
@@ -22,11 +24,21 @@ def about(request):
     
     return render(request, 'pages/about.html',context)
 
-def car_details(request):
-
-    return render(request, 'pages/car_details.html')
+def car_details(request, id):
+    single_car = get_object_or_404(Car, id=id)
+    context = {
+        'single_car': single_car,
+    }
+    return render(request, 'pages/car_details.html', context)
 def cars(request):
-    return render(request, 'pages/cars.html')
+    cars = Car.objects.all()
+    paginator= Paginator(cars, 3)  
+    page= request.GET.get('page')
+    paged_cars = paginator.get_page(page)
+    context = {
+        'cars': cars,
+    }
+    return render(request, 'pages/cars.html', context)
 
 def contact(request):
     return render(request, 'pages/contact.html')
