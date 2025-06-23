@@ -5,8 +5,10 @@ from .models import *
 
 def index(request):
     teams=Team.objects.all()
+    feature_cars= Car.objects.order_by('-created_date').filter(is_featured=True)
     context = {
         'teams':teams,
+        'feature_cars': feature_cars,
     }
 
     return render(request, 'pages/index.html', context)
