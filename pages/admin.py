@@ -4,6 +4,11 @@ from django.utils.html import format_html
 
 # Register your models here.
 
+# admin.site.site_header = "Car Zone Administration"
+admin.site.site_title = "Car Zone Admin"
+admin.site.index_title = "Welcome to Car Zone Dashboard"
+
+
 
 class TeamAdmin(admin.ModelAdmin):
 
